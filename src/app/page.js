@@ -3,19 +3,27 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#fdfbf7] font-sans">
-      {/* Navigation - แถบเมนูบน (เอาปุ่มจองออกแล้ว) */}
+      {/* ดึงฟอนต์ลายเซ็นจาก Google Fonts */}
+      <link href="https://googleapis.com" rel="stylesheet" />
+
+      {/* Navigation - แถบเมนูบน */}
       <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-stone-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex flex-col">
-            <span className="text-2xl font-bold text-[#1a4d2e] tracking-tight">เรือนพัชรี</span>
-            <span className="text-[10px] tracking-[0.25em] text-[#8b7355] uppercase font-medium">Ruen Patcharee Health Massage</span>
+            {/* ชื่อร้านภาษาอังกฤษแบบลายเซ็น */}
+            <span className="text-3xl text-[#8b7355] lowercase" style={{ fontFamily: "'Great Vibes', cursive" }}>
+              Ruen Patcharee
+            </span>
+            <span className="text-[12px] font-bold text-[#1a4d2e] tracking-[0.1em] -mt-1">
+              เรือนพัชรี นวดเพื่อสุขภาพ
+            </span>
           </div>
           <div className="hidden md:flex space-x-10 text-sm font-medium text-gray-700 items-center">
             <a href="#" className="hover:text-[#1a4d2e] transition">หน้าแรก</a>
             <a href="#" className="hover:text-[#1a4d2e] transition">บริการและราคา</a>
             <a href="#" className="hover:text-[#1a4d2e] transition">บรรยากาศร้าน</a>
-            <a href="tel:0XXXXXXXXX" className="text-[#1a4d2e] font-bold border-b-2 border-[#1a4d2e] pb-1">
-              โทร: 0XX-XXX-XXXX
+            <a href="tel:0659255878" className="text-[#1a4d2e] font-bold border-b-2 border-[#1a4d2e] pb-1">
+              โทร: 065-925-5878
             </a>
           </div>
         </div>
@@ -33,7 +41,10 @@ export default function Home() {
         </div>
         
         <div className="relative z-10 text-center text-white px-6">
-          <p className="text-[#d4af37] text-sm md:text-base mb-4 tracking-[0.5em] uppercase font-medium">สัมผัสศาสตร์แห่งการผ่อนคลาย</p>
+          {/* ชื่อร้านลายเซ็นขนาดใหญ่กลางจอ */}
+          <p className="text-[#d4af37] text-4xl md:text-5xl mb-2" style={{ fontFamily: "'Great Vibes', cursive" }}>
+            Ruen Patcharee
+          </p>
           <h1 className="text-5xl md:text-8xl font-bold mb-8 leading-tight">เรือนพัชรี นวดเพื่อสุขภาพ</h1>
           <p className="text-lg md:text-2xl mb-12 max-w-2xl mx-auto font-light leading-relaxed opacity-90 text-stone-200">
             บริการนวดไทย นวดเท้า และสปาเพื่อสุขภาพระดับพรีเมียม <br className="hidden md:block"/>
@@ -51,11 +62,11 @@ export default function Home() {
       </section>
 
       {/* Info Section - เพิ่มข้อมูลร้านสั้นๆ */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto text-center px-6">
+      <section className="py-20 bg-white text-center">
+        <div className="max-w-4xl mx-auto px-6">
           <h3 className="text-[#1a4d2e] text-3xl font-bold mb-6">ยินดีต้อนรับสู่เรือนพัชรี</h3>
-          <p className="text-gray-600 leading-relaxed text-lg font-light">
-            เรามุ่งเน้นการให้บริการที่ได้มาตรฐาน สะอาด และปลอดภัย ด้วยทีมช่างนวดมืออาชีพที่พร้อมจะดูแลคุณแม่และลูกค้าทุกท่านให้ได้รับการพักผ่อนที่ดีที่สุด
+          <p className="text-gray-600 leading-relaxed text-lg font-light italic">
+            " เรามุ่งเน้นการให้บริการที่ได้มาตรฐาน สะอาด และปลอดภัย ด้วยทีมช่างนวดมืออาชีพที่พร้อมจะดูแลคุณแม่และลูกค้าทุกท่านให้ได้รับการพักผ่อนที่ดีที่สุด "
           </p>
         </div>
       </section>
@@ -65,7 +76,7 @@ export default function Home() {
           <p className="text-white text-xl font-semibold mb-2">เรือนพัชรี นวดเพื่อสุขภาพ</p>
           <p className="text-sm tracking-widest uppercase opacity-70">เปิดให้บริการทุกวัน | 09:00 - 20:00 น.</p>
           <div className="mt-8 pt-8 border-t border-white/10 text-xs opacity-50">
-            © 2024 Ruen Patcharee Health Massage. All rights reserved.
+            © 2026 Ruen Patcharee Health Massage. All rights reserved.
           </div>
       </footer>
     </main>
