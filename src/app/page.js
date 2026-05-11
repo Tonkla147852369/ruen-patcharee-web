@@ -3,18 +3,16 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#fdfbf7] font-sans">
-      {/* ดึงฟอนต์ลายเซ็นจาก Google Fonts */}
-      <link href="https://googleapis.com" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sriracha&family=Chonburi&display=swap" rel="stylesheet" />
 
-      {/* Navigation - แถบเมนูบน */}
+      {/* Navigation */}
       <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-stone-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex flex-col">
-            {/* ชื่อร้านภาษาอังกฤษแบบลายเซ็น */}
-            <span className="text-3xl text-[#8b7355] lowercase" style={{ fontFamily: "'Great Vibes', cursive" }}>
+          <div className="flex flex-col flex-shrink-0 pl-6">
+            <span className="text-2xl text-[#8b7355] lowercase" style={{ fontFamily: "'Great Vibes', cursive" }}>
               Ruen Patcharee
             </span>
-            <span className="text-[12px] font-bold text-[#1a4d2e] tracking-[0.1em] -mt-1">
+            <span className="text-sm text-[#1a4d2e] -mt-1" style={{ fontFamily: "'Sriracha', cursive" }}>
               เรือนพัชรี นวดเพื่อสุขภาพ
             </span>
           </div>
@@ -29,41 +27,56 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section - ส่วนภาพใหญ่หน้าแรก */}
+      {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://unsplash.com" 
-            className="w-full h-full object-cover"
-            alt="บรรยากาศร้านนวดเรือนพัชรี"
-          />
-          <div className="absolute inset-0 bg-black/45"></div>
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/IMG_1325.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          {/* แผ่นกรองแสงเพื่อให้พื้นหลังดูละมุนขึ้น */}
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
         
-        <div className="relative z-10 text-center text-white px-6">
-          {/* ชื่อร้านลายเซ็นขนาดใหญ่กลางจอ */}
-          <p className="text-[#d4af37] text-4xl md:text-5xl mb-2" style={{ fontFamily: "'Great Vibes', cursive" }}>
-            Ruen Patcharee
-          </p>
-          <h1 className="text-5xl md:text-8xl font-bold mb-8 leading-tight">เรือนพัชรี นวดเพื่อสุขภาพ</h1>
-          <p className="text-lg md:text-2xl mb-12 max-w-2xl mx-auto font-light leading-relaxed opacity-90 text-stone-200">
-            บริการนวดไทย นวดเท้า และสปาเพื่อสุขภาพระดับพรีเมียม <br className="hidden md:block"/>
-            ผ่อนคลายความเหนื่อยล้า ในบรรยากาศที่แสนอบอุ่นและเงียบสงบ
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-[#d4af37] text-black px-14 py-4 rounded-full text-lg font-bold hover:bg-[#c19b2e] transition-all shadow-2xl hover:scale-105">
+        <div className="relative z-10 text-center px-6 flex flex-col items-center gap-6">
+          
+          {/* กรอบที่ 1: ชื่อร้าน (พื้นหลังดำจาง + ขอบทอง) */}
+          <div className="bg-black/40 backdrop-blur-sm border-2 border-[#d4af37] px-10 py-6 rounded-xl shadow-2xl transition-all hover:bg-black/50">
+            <p className="text-[#d4af37] text-4xl md:text-5xl mb-2" style={{ fontFamily: "'Great Vibes', cursive" }}>
+              Ruen Patcharee
+            </p>
+            <h1 className="text-4xl md:text-6xl text-white font-normal leading-tight" style={{ fontFamily: "'Chonburi', cursive" }}>
+              เรือนพัชรี นวดเพื่อสุขภาพ
+            </h1>
+          </div>
+
+          {/* กรอบที่ 2: สโลแกน (พื้นหลังดำจาง + ขอบขาวบางๆ) */}
+          <div className="bg-black/30 backdrop-blur-[2px] border border-white/20 px-8 py-4 rounded-lg max-w-2xl">
+            <p className="text-lg md:text-xl font-light leading-relaxed text-stone-100">
+              บริการนวดไทย นวดเท้า และสปาเพื่อสุขภาพระดับพรีเมียม <br className="hidden md:block"/>
+              ผ่อนคลายความเหนื่อยล้า ในบรรยากาศที่แสนอบอุ่นและเงียบสงบ
+            </p>
+          </div>
+
+          {/* กลุ่มปุ่มกด */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+            <button className="bg-[#d4af37] text-black px-12 py-3 rounded-full text-lg font-bold hover:bg-[#f1c40f] transition-all shadow-xl hover:scale-105">
               ดูเมนูและราคา
             </button>
-            <button className="border-2 border-white/60 backdrop-blur-sm text-white px-14 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-[#1a4d2e] transition-all hover:scale-105">
-              สอบถามเส้นทาง / ติดต่อ
+            <button className="border-2 border-white/80 backdrop-blur-md text-white px-12 py-3 rounded-full text-lg font-bold hover:bg-white hover:text-black transition-all hover:scale-105">
+              ติดต่อเรา
             </button>
           </div>
         </div>
       </section>
 
-      {/* Info Section - เพิ่มข้อมูลร้านสั้นๆ */}
+      {/* Info Section */}
       <section className="py-20 bg-white text-center">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6 font-sans">
           <h3 className="text-[#1a4d2e] text-3xl font-bold mb-6">ยินดีต้อนรับสู่เรือนพัชรี</h3>
           <p className="text-gray-600 leading-relaxed text-lg font-light italic">
             " เรามุ่งเน้นการให้บริการที่ได้มาตรฐาน สะอาด และปลอดภัย ด้วยทีมช่างนวดมืออาชีพที่พร้อมจะดูแลคุณแม่และลูกค้าทุกท่านให้ได้รับการพักผ่อนที่ดีที่สุด "
