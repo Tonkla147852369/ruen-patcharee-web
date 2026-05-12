@@ -48,15 +48,11 @@ export default function Home() {
               วารสาร
               <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#1a4d2e] transition-all duration-300 group-hover:w-full"></span>
             </a>
-            
-            <button className="bg-[#1a4d2e] text-white px-8 py-2 rounded-[2px] text-[12px] uppercase tracking-widest hover:bg-[#143d24] transition-all duration-300">
-              จองเลย
-            </button>
           </nav>
         </div>
       </header>
 
-      {/* 2. Hero Section (ตามภาพ image_d35150.jpg) */}
+      {/* 2. Hero Section */}
       <section className="relative pt-48 pb-24 px-6 max-w-7xl mx-auto overflow-hidden">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className={`flex-1 transition-all duration-1000 delay-300 ${isMounted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
@@ -88,63 +84,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. ส่วนบริการแนะนำ (ต่อท้ายลงมา) */}
-      <section className="bg-white py-24 px-6 relative z-10">
+      {/* 3. บริการของเรา (6 รายการ) */}
+      <section className="bg-white py-32 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div className="max-w-xl">
-              <h3 className="text-4xl font-bold text-[#1a4d2e] mb-4" style={{ fontFamily: "'Chonburi', cursive" }}>
-                บริการของเรา
-              </h3>
-              <p className="text-gray-500 text-lg">
-                คัดสรรทรีตเมนต์ที่ช่วยบำบัดความเมื่อยล้าและฟื้นฟูร่างกายอย่างตรงจุด ในราคาที่คุ้มค่า
-              </p>
-            </div>
-            <div className="hidden md:block">
-              <div className="w-32 h-[1px] bg-[#8b7355]/30"></div>
+          <div className="relative mb-20">
+            <div className="absolute bottom-1 left-0 right-0 h-[1px] bg-[#8b7355]/20"></div>
+            <div className="flex flex-col md:flex-row items-end justify-between relative z-10">
+              <div className="max-w-xl bg-white pr-12 pb-1">
+                <h3 className="text-4xl font-bold text-[#1a4d2e] mb-4" style={{ fontFamily: "'Chonburi', cursive" }}>
+                  บริการของเรา
+                </h3>
+                <p className="text-gray-500 text-lg leading-relaxed">
+                  คัดสรรทรีตเมนต์ที่ช่วยบำบัดความเมื่อยล้าและฟื้นฟูร่างกายอย่างตรงจุด ในราคาที่คุ้มค่า
+                </p>
+              </div>
+              <div className="hidden md:block bg-white pl-8 pb-1 text-[#8b7355] text-sm tracking-[0.2em] uppercase font-medium">
+                Pattaya Branch
+              </div>
             </div>
           </div>
 
-          {/* รายการบริการ - แก้ให้ปุ่มรายละเอียดแยก Hover ตาม image_d2fe9d.png */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { 
-                title: "นวดไทยเพื่อสุขภาพ", 
-                price: "200 - 300.-", 
-                desc: "เทคนิคนวดกดจุดและยืดเหยียดแบบไทยเดิม ช่วยคลายเส้นที่ตึงเครียดให้เบาสบาย" 
-              },
-              { 
-                title: "นวดเท้าผ่อนคลาย", 
-                price: "200 - 250.-", 
-                desc: "เน้นกระตุ้นจุดสะท้อนบนฝ่าเท้า เพื่อปรับสมดุลร่างกายและลดความอ่อนล้า" 
-              },
-              { 
-                title: "นวดอโรม่า / น้ำมัน", 
-                price: "400 - 500.-", 
-                desc: "ปรนนิบัติผิวและจิตใจด้วยกลิ่นหอม พร้อมการนวดที่นุ่มนวลช่วยให้หลับสนิท" 
-              }
+              { title: "นวดไทยเพื่อสุขภาพ", price: "200 - 300.-", desc: "เทคนิคนวดกดจุดและยืดเหยียดแบบไทยเดิม ช่วยคลายเส้นที่ตึงเครียดให้เบาสบาย" },
+              { title: "นวดเท้าผ่อนคลาย", price: "200 - 250.-", desc: "เน้นกระตุ้นจุดสะท้อนบนฝ่าเท้า เพื่อปรับสมดุลร่างกายและลดความอ่อนล้า" },
+              { title: "นวดอโรม่า / น้ำมัน", price: "400 - 500.-", desc: "ปรนนิบัติผิวและจิตใจด้วยกลิ่นหอม พร้อมการนวดที่นุ่มนวลช่วยให้หลับสนิท" },
+              { title: "นวดประคบสมุนไพร", price: "350 - 450.-", desc: "ใช้ความร้อนจากสมุนไพรสดช่วยลดการอักเสบของกล้ามเนื้อและกระตุ้นการไหลเวียน" },
+              { title: "นวดขัดผิว / สครับ", price: "500 - 600.-", desc: "ผลัดเซลล์ผิวเก่าให้กระจ่างใส พร้อมบำรุงผิวให้เนียนนุ่มน่าสัมผัส" },
+              { title: "นวดเฉพาะจุด (คอ บ่า ไหล่)", price: "200 - 300.-", desc: "เน้นบรรเทาอาการ Office Syndrome สำหรับผู้ที่มีเวลาน้อยแต่ต้องการความผ่อนคลาย" }
             ].map((service, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className="bg-[#fafaf5] p-10 border border-gray-100 transition-all duration-500 group-hover:bg-white group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] group-hover:-translate-y-2">
                   <div className="flex justify-between items-start mb-6">
-                    <h4 className="text-xl font-bold text-[#1a4d2e] leading-tight">
-                      {service.title}
-                    </h4>
+                    <h4 className="text-xl font-bold text-[#1a4d2e] leading-tight">{service.title}</h4>
                     <span className="text-[#8b7355] font-semibold">{service.price}</span>
                   </div>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-8">
-                    {service.desc}
-                  </p>
-                  
-                  {/* แก้ไขส่วนนี้: ปุ่มรายละเอียดแยก Hover อิสระ */}
+                  <p className="text-gray-400 text-sm leading-relaxed mb-8">{service.desc}</p>
                   <div className="inline-flex items-center gap-2 text-[#1a4d2e] text-xs font-bold uppercase tracking-widest group/btn hover:text-[#8b7355] transition-all duration-300">
                     <span>รายละเอียด</span>
-                    <svg 
-                      className="w-3 h-3 transition-transform duration-300 group-hover/btn:translate-x-2" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
+                    <svg className="w-3 h-3 transition-transform duration-300 group-hover/btn:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
@@ -152,19 +130,40 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <div className="mt-24 text-center">
+            <p className="text-[#8b7355] italic font-serif mb-8 text-lg">"สอบถามคิวว่างหรือปรึกษาบริการได้ที่นี่"</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <a href="https://line.me" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-[#06C755] text-white px-10 py-4 rounded-full text-sm font-bold hover:shadow-xl hover:scale-105 transition-all">
+                <span className="tracking-widest uppercase">จองผ่าน LINE</span>
+              </a>
+              <a href="tel:0812345678" className="flex items-center justify-center gap-3 bg-[#1a4d2e] text-white px-10 py-4 rounded-full text-sm font-bold hover:shadow-xl hover:scale-105 transition-all">
+                <span className="tracking-widest uppercase">โทร: 081-234-5678</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 4. Footer */}
-      <footer className="bg-white border-t border-gray-50 py-16 text-center">
+      {/* 4. Footer พร้อมลิขสิทธิ์ใหม่ */}
+      <footer className="bg-white border-t border-gray-50 py-20 text-center">
         <div className={`transition-all duration-1000 delay-700 ${isMounted ? 'opacity-100' : 'opacity-0'}`}>
-          <p className="text-[#1a4d2e] font-bold text-lg mb-3">เรือนพัชรี นวดเพื่อสุขภาพ</p>
-          <div className="flex justify-center gap-4 text-[10px] text-gray-400 tracking-[0.4em] uppercase">
+          <p className="text-[#1a4d2e] font-bold text-xl mb-4" style={{ fontFamily: "'Chonburi', cursive" }}>
+            เรือนพัชรี นวดเพื่อสุขภาพ
+          </p>
+          
+          <div className="text-[11px] text-gray-400 tracking-wider uppercase mb-8 flex justify-center gap-6">
             <span>สะอาด</span>
             <span>•</span>
             <span>สบาย</span>
             <span>•</span>
-            <span>สาขาพัทยา</span>
+            <span>ผ่อนคลาย</span>
+          </div>
+
+          <div className="pt-8 border-t border-gray-50 max-w-xs mx-auto">
+            <p className="text-[11px] text-gray-500 leading-relaxed">
+              © ลิขสิทธิ์ 2026 เรือนพัชรี นวดเพื่อสุขภาพ <br/> สงวนลิขสิทธิ์ทุกประการ
+            </p>
           </div>
         </div>
       </footer>
