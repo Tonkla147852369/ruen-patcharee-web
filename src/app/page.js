@@ -29,7 +29,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 z-0"
           style={{
             backgroundImage: "url('/IMG_1325.jpg')",
@@ -41,9 +41,8 @@ export default function Home() {
           {/* แผ่นกรองแสงเพื่อให้พื้นหลังดูละมุนขึ้น */}
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
-        
+
         <div className="relative z-10 text-center px-6 flex flex-col items-center gap-6">
-          
           {/* กรอบที่ 1: ชื่อร้าน (พื้นหลังดำจาง + ขอบทอง) */}
           <div className="bg-black/40 backdrop-blur-sm border-2 border-[#d4af37] px-10 py-6 rounded-xl shadow-2xl transition-all hover:bg-black/50">
             <p className="text-[#d4af37] text-4xl md:text-5xl mb-2" style={{ fontFamily: "'Great Vibes', cursive" }}>
@@ -57,7 +56,7 @@ export default function Home() {
           {/* กรอบที่ 2: สโลแกน (พื้นหลังดำจาง + ขอบขาวบางๆ) */}
           <div className="bg-black/30 backdrop-blur-[2px] border border-white/20 px-8 py-4 rounded-lg max-w-2xl">
             <p className="text-lg md:text-xl font-light leading-relaxed text-stone-100">
-              บริการนวดไทย นวดเท้า และสปาเพื่อสุขภาพระดับพรีเมียม <br className="hidden md:block"/>
+              บริการนวดไทย นวดเท้า และสปาเพื่อสุขภาพระดับพรีเมียม <br className="hidden md:block" />
               ผ่อนคลายความเหนื่อยล้า ในบรรยากาศที่แสนอบอุ่นและเงียบสงบ
             </p>
           </div>
@@ -86,11 +85,11 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-[#1a4d2e] py-12 text-center text-stone-300">
-          <p className="text-white text-xl font-semibold mb-2">เรือนพัชรี นวดเพื่อสุขภาพ</p>
-          <p className="text-sm tracking-widest uppercase opacity-70">เปิดให้บริการทุกวัน | 09:00 - 20:00 น.</p>
-          <div className="mt-8 pt-8 border-t border-white/10 text-xs opacity-50">
-            © 2026 Ruen Patcharee Health Massage. All rights reserved.
-          </div>
+        <p className="text-white text-xl font-semibold mb-2">เรือนพัชรี นวดเพื่อสุขภาพ</p>
+        <p className="text-sm tracking-widest uppercase opacity-70">เปิดให้บริการทุกวัน | 09:00 - 20:00 น.</p>
+        <div className="mt-8 pt-8 border-t border-white/10 text-xs opacity-50">
+          © 2026 Ruen Patcharee Health Massage. All rights reserved.
+        </div>
       </footer>
     </main>
   );
