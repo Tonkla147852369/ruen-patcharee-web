@@ -125,19 +125,61 @@ export default function Home() {
             ))}
           </div>
 
-          {/* ส่วนติดต่อสอบถาม */}
-          <div className="relative mt-24 py-24 bg-[#fdfcf7] rounded-[40px] text-center border border-[#eceae0]/50 shadow-sm overflow-hidden">
-            <GreenDiamondPattern opacity={0.08} mask="linear-gradient(to bottom, black 0%, transparent 25%, transparent 75%, black 100%)" />
-            <div className="relative z-10 px-6">
-              <p className="text-[#8b7355] italic font-serif mb-10 text-xl">"สอบถามคิวว่างหรือปรึกษาบริการได้ที่นี่"</p>
-              <div className="flex flex-col sm:flex-row justify-center gap-8">
-                <a href="#" className="bg-[#06C755] text-white px-12 py-5 rounded-full text-sm font-bold shadow-lg hover:scale-105 transition-all tracking-widest">จองผ่าน LINE</a>
-                <a href="tel:0659255878" className="bg-[#1a4d2e] text-white px-12 py-5 rounded-full text-sm font-bold shadow-lg hover:scale-105 transition-all tracking-widest">โทร: 065-925-5878</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          {/* ส่วนติดต่อสอบถามใหม่ - อ้างอิงสไตล์จาก image_92a07d.png */}
+  <div className="relative mt-24 py-16 bg-[#2a2620] rounded-[40px] text-center border border-gray-800 shadow-2xl overflow-hidden">
+    <GreenDiamondPattern opacity={0.05} mask="linear-gradient(to bottom, black, transparent)" />
+    
+    <div className="relative z-10 px-6 text-[#fafaf5]">
+      {/* ข้อมูลที่อยู่ */}
+      <div className="mb-10 space-y-2 opacity-90">
+        <h4 className="text-2xl font-bold mb-4 text-[#d4bd94]" style={{ fontFamily: "'Chonburi', cursive" }}>
+          เรือนพัชรี นวดเพื่อสุขภาพ
+        </h4>
+        <p className="text-sm tracking-wide">ถ. เทพประสิทธิ์ เมืองพัทยา</p>
+        <p className="text-sm tracking-wide">อำเภอบางละมุง ชลบุรี ประเทศไทย</p>
+        <p className="text-sm mt-4">
+          <span className="text-[#d4bd94]">อีเมล:</span> ruenpatcharee.massage@gmail.com
+        </p>
+      </div>
+
+      <div className="w-12 h-[1px] bg-[#d4bd94]/30 mx-auto mb-8"></div>
+      
+      <p className="text-[#d4bd94] text-lg font-medium mb-8" style={{ fontFamily: "'Sriracha', cursive" }}>ติดต่อเรา</p>
+
+      {/* ชุดไอคอนโซเชียลเด้งลิงก์ได้ */}
+      <div className="flex justify-center items-center gap-8">
+        {/* Facebook */}
+        <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform bg-white rounded-full p-3 w-12 h-12 flex items-center justify-center">
+          <svg className="w-6 h-6 text-[#2a2620]" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+          </svg>
+        </a>
+
+        {/* Instagram */}
+        <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform bg-white rounded-full p-3 w-12 h-12 flex items-center justify-center">
+          <svg className="w-6 h-6 text-[#2a2620]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+        </a>
+
+        {/* LINE */}
+        <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform bg-white rounded-full p-2 w-12 h-12 flex items-center justify-center">
+          <span className="text-[#2a2620] font-black text-[10px]">LINE</span>
+        </a>
+
+        {/* Email - ตั้งค่า mailto เรียบร้อย */}
+        <a href="mailto:ruenpatcharee.massage@gmail.com" className="hover:scale-110 transition-transform bg-white rounded-full p-3 w-12 h-12 flex items-center justify-center">
+          <svg className="w-6 h-6 text-[#2a2620]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+       </div>
+     </div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="relative bg-[#f7f9f7] border-t border-gray-100 py-20 text-center overflow-hidden">
