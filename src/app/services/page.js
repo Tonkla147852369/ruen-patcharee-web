@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useTransitionNavigate } from "../layout";
 
 export default function Services() {
+  const [openMenu, setOpenMenu] = React.useState(null);
   const pathname = usePathname();
   // เรียกใช้งานฟังก์ชันสำหรับการสลับหน้าจอพร้อมเอฟเฟกต์แอนิเมชัน
   const navigateWithBox = useTransitionNavigate();
@@ -140,50 +141,101 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               { 
+                id: "thai",
                 title: "นวดไทยเพื่อสุขภาพ", 
                 price: "200 - 300.-", 
+                duration: "1 - 2 ชั่วโมง",
+                cure: "สลายพังผืดที่ยึดตึงตามแนวเส้นประธานสิบ บรรเทาอาการปวดเมื่อยสะสมจากการทำงานและการนั่งผิดท่า",
+                technique: "เทคนิคการกดจุดสัญญาณด้วยน้ำหนักมือที่แม่นยำ ผสานการยืดเหยียดร่างกายแบบไทยเดิมอย่างพิถีพิถัน",
                 desc: "ผสมผสานเทคนิคการกดจุดสัญญาณตามแนวเส้นประธานสิบร่วมกับการยืดเหยียดกล้ามเนื้อแบบไทยเดิม บรรเทาอาการปวดตึงสะสม เพิ่มความยืดหยุ่นให้ข้อต่อ ช่วยให้ระบบไหลเวียนโลหิตทำงานได้มีประสิทธิภาพยิ่งขึ้น เหมาะสำหรับการฟื้นฟูร่างกายอย่างล้ำลึก" 
               },
               { 
+                id: "foot",
                 title: "นวดเท้าเพื่อสุขภาพและผ่อนคลาย", 
                 price: "200 - 250.-", 
+                duration: "1 ชั่วโมง",
+                cure: "บรรเทาความเมื่อยล้าสะสมบริเวณฝ่าเท้าและน่อง ลดอาการนอนไม่หลับ คลายความเครียดในระบบประสาทส่วนปลาย",
+                technique: "ครีมนวดสมุนไพรสูตรเย็นบำรุงผิวเท้า ผสานการใช้ไม้กดจุดชิงชันกระตุ้นจุดสะท้อนได้อย่างลึกซึ้ง",
                 desc: "ศาสตร์การกดจุดสะท้อนบนฝ่าเท้า (Foot Reflexology) ที่เชื่อมโยงไปยังอวัยวะภายในต่างๆ ช่วยกระตุ้นระบบประสาทและปรับสมดุลพลังงานภายในร่างกายอย่างเป็นธรรมชาติ บรรเทาความเมื่อยล้าจากการยืนหรือเดินเป็นเวลานาน ให้ความรู้สึกเบาสบายทันทีหลังนวด" 
               },
               { 
+                id: "aroma",
                 title: "นวดอโรม่า / น้ำมันอุ่น", 
                 price: "400 - 500.-", 
+                duration: "1 - 2 ชั่วโมง",
+                cure: "คลายความตึงเครียดของระบบประสาท ลดความตึงพังผืดกล้ามเนื้อชั้นตื้นอย่างอ่อนโยน เหมาะสำหรับผู้ที่อ่อนล้าขั้นสุด",
+                technique: "น้ำมันหอมระเหยบริสุทธิ์เกรดบำบัดอุ่นร้อน ผสานเทคนิคการลูบสโตรกที่ต่อเนื่องและนุ่มนวลชวนเคลิบเคลิ้ม",
                 desc: "ศาสตร์แห่งการปรนนิบัติผิวและจิตใจขั้นสูง ใช้เทคนิคการลูบสโตรกที่นุ่มนวลผสานกับน้ำมันหอมระเหยบริสุทธิ์สูตรเฉพาะ ช่วยคลายความเครียดสะสมในระบบประสาท ลดความตึงพังผืดกล้ามเนื้อชั้นตื้น พร้อมบำรุงผิวพรรณให้นุ่มนวลชุ่มชื้น ชวนให้คุณเคลิบเคลิ้มหลับสบาย" 
               },
               { 
+                id: "herbal",
                 title: "นวดประคบสมุนไพรสด", 
                 price: "350 - 450.-", 
+                duration: "1.5 - 2 ชั่วโมง",
+                cure: "ลดการอักเสบกะทันหันของกล้ามเนื้อ บรรเทาอาการเคล็ดขัดยอก และลดอาการบวมตึงอักเสบตามข้อต่อต่างๆ",
+                technique: "ลูกประคบที่อัดแน่นด้วยสมุนไพรสด (ไพล, ขมิ้น, ตะไคร้) นึ่งเตาดินเผาจนได้ความร้อนและตัวยาเข้มข้น",
                 desc: "ยกระดับการนวดไทยด้วยความร้อนและน้ำมันสกัดจากลูกประคบสมุนไพรสดสูตรโบราณ (ไพล, ขมิ้น, ตะไคร้, ผิวมะกรูด) ความร้อนจะช่วยเปิดรูขุมขนและขยายเส้นเลือด เพื่อให้ตัวยาสมุนไพรซึมเข้าสู่ชั้นกล้ามเนื้อ บรรเทาอาการเคล็ดขัดยอก ลดการอักเสบ และบวมตึงได้อย่างดีเยื่ยม" 
               },
               { 
+                id: "scrub",
                 title: "นวดขัดผิวกาย / สครับออร์แกนิก", 
                 price: "500 - 600.-", 
+                duration: "1 ชั่วโมง",
+                cure: "ขจัดเซลล์ผิวเก่าที่เสื่อมสภาพ หมองคล้ำ และลดสิ่งสกปรกตกค้างอุดตันตามรูขุมขนทั่วร่างกายอย่างหมดจด",
+                technique: "เนื้อสครับธรรมชาติเม็ดละเอียดไม่บาดผิว ผสานครีมน้ำนมบำรุงเข้มข้นสูตรเฉพาะของเรือนพัชรี",
                 desc: "ทรีตเมนต์บำบัดผิวด้วยเนื้อสครับเนียนละเอียดสกัดจากธรรมชาติ ช่วยผลัดเซลล์ผิวเก่าที่เสื่อมสภาพอย่างอ่อนโยน เผยผิวใหม่ที่ดูกระจ่างใส เรียบเนียน พร้อมเติมโปรตีนและวิตามินบำรุงลึกสู่ชั้นผิวตามด้วยการลูบไล้ครีมบำรุงเข้มข้น ให้ผิวพรรณเปล่งปลั่งมีออร่า" 
               },
               { 
+                id: "office",
                 title: "นวดเฉพาะจุด (คอ บ่า ไหล่ และหลัง)", 
                 price: "200 - 300.-", 
+                duration: "1 - 2 ชั่วโมง",
+                cure: "สลายปมกล้ามเนื้อหดเกร็ง (Trigger Points) สาเหตุหลักของ Office Syndrome, อาการปวดหัวไมเกรน และบ่าตึงร้าว",
+                technique: "ศาสตร์การนวดแก้อาการ (Therapeutic Massage) เน้นน้ำหนักนิ่งลึกตรงจุดเจ็บปวดเพื่อคลายปมกล้ามเนื้ออย่างตรงเป้า",
                 desc: "คอร์สบำบัดเร่งด่วนที่เน้นจัดการปมกล้ามเนื้อตึง (Trigger Points) บริเวณ คอ บ่า ไหล่ และสะบักหลัง ซึ่งเป็นสาเหตุหลักของอาการ Office Syndrome, ปวดหัวไมเกรน และตาพร่ามัว เหมาะสำหรับผู้ที่มีเวลาน้อยแต่ต้องการเน้นการแก้ไขปัญหาอย่างตรงจุดและเฉียบขาด" 
               }
             ].map((service, index) => (
-              <div key={index} className="bg-[#fafaf5] p-10 border border-gray-100 transition-all duration-500 hover:bg-white hover:shadow-2xl hover:-translate-y-2 min-h-[340px] flex flex-col justify-between group/card rounded-[4px]">
+              <div key={index} className="bg-[#fafaf5] p-10 border border-gray-100 transition-all duration-500 hover:bg-white hover:shadow-2xl min-h-[340px] flex flex-col justify-between group/card rounded-[4px]">
                 <div>
-                  <div className="flex justify-between items-start mb-6">
+                  <div className="flex justify-between items-start mb-4">
                     <h4 className="text-xl font-bold text-[#1a4d2e] leading-tight group-hover/card:text-[#b89b5e] transition-colors">{service.title}</h4>
                     <span className="text-[#b89b5e] font-bold text-lg whitespace-nowrap ml-4">{service.price}</span>
                   </div>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-8">{service.desc}</p>
+                  <div className="text-xs text-[#8b7355] font-bold mb-3">🕒 เวลาบริการ: {service.duration}</div>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6">{service.desc}</p>
                 </div>
-                <div className="inline-flex items-center gap-2 text-[#1a4d2e] text-xs font-bold uppercase tracking-widest cursor-pointer group/btn w-fit">
-                  <span className="transition-colors group-hover/btn:text-[#b89b5e]">จองคอร์สนี้</span>
-                  <svg className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-2 group-hover/btn:text-[#b89b5e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+
+                <div>
+                  {/* ปุ่มกดเปิด-ปิด เมนูของใครของมัน */}
+                  <div 
+                    onClick={() => setOpenMenu(openMenu === service.id ? null : service.id)}
+                    className="inline-flex items-center gap-2 text-[#1a4d2e] text-xs font-bold uppercase tracking-widest cursor-pointer group/btn w-fit mb-2"
+                  >
+                    <span className="transition-colors group-hover/btn:text-[#b89b5e]">
+                      {openMenu === service.id ? "ปิดรายละเอียด ↑" : "จองคอร์สนี้"}
+                    </span>
+                    <svg className={`w-4 h-4 transition-transform duration-300 ${openMenu === service.id ? 'rotate-180 text-[#b89b5e]' : 'group-hover/btn:translate-x-2'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+
+                  {/* โซนกางข้อมูลเฉพาะของคอร์สนั้นๆ */}
+                  {openMenu === service.id && (
+                    <div className="mt-4 p-4 bg-white rounded border border-gray-100 text-left text-xs space-y-2 text-gray-700 shadow-inner">
+                      <p><strong>🩹 แก้อะไร:</strong> {service.cure}</p>
+                      <p><strong>🌿 การบำบัด:</strong> {service.technique}</p>
+                      <a
+                        href="https://line.me/ti/p/~@LINE_ID" // เปลี่ยน ID LINE ของพี่ตรงนี้ได้เลยครับ
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 block text-center bg-[#1a4d2e] text-white py-2 rounded font-bold hover:bg-[#8b7355] transition-colors"
+                      >
+                        ยืนยันการจองผ่าน LINE
+                      </a>
+                    </div>
+                  )}
                 </div>
+
               </div>
             ))}
           </div>
